@@ -1,41 +1,18 @@
 export class Movie {
-  id: number;
-  nameRus: string;
-  nameEng: string;
-  format: string;
-  year: number;
-  country: string;
-  slogan: string;
-  genre: string;
-  duration: string;
-  price: number;
-  qty?: number;
-  currency?: string;
   constructor(
-    id: number,
-    nameRus: string,
-    nameEng: string,
-    format: string,
-    year: number,
-    country: string,
-    slogan: string,
-    genre: string,
-    duration: string,
-    price: number
-  ) {
-    this.id = id;
-    this.nameRus = nameRus;
-    this.nameEng = nameEng;
-    this.format = format;
-    this.year = year;
-    this.country = country;
-    this.slogan = slogan;
-    this.genre = genre;
-    this.duration = duration;
-    this.price = price;
-    this.qty = 1;
-    this.currency = "RUB";
-  }
+    public id: number,
+    public nameRus: string,
+    public nameEng: string,
+    public format: string,
+    public year: number,
+    public country: string,
+    public slogan: string,
+    public genre: string,
+    public duration: string,
+    public price: number,
+    readonly qty: number = 1,
+    readonly currency: string = "RUB"
+  ) {}
 }
 
 export function addFilmToCart(cart: Movie[], film: Movie) {
